@@ -1,5 +1,19 @@
 const test = QUnit.test;
 
-test('time to write a test', function(assert) {
-    assert.equal(true, false);
+import catOrDog from '../src/cat-or-dog.js';
+
+test('return cat if random number is less than 0.5', function(assert) {
+    const randomNumber = 0.4;
+    const result = catOrDog(randomNumber);
+    const expected = 'cat';
+
+    assert.equal(result, expected);
+});
+
+test('return dog if random number is 0.5 or greater', function(assert) {
+    const randomNumber = 0.5;
+    const result = catOrDog(randomNumber);
+    const expected = 'dog';
+
+    assert.equal(result, expected);
 });
