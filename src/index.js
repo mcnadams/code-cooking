@@ -4,11 +4,14 @@ const pickForm = document.getElementById('pick-form');
 const image = document.getElementById('animal-pic');
 const dogNode = document.getElementById('dog-count');
 const catNode = document.getElementById('cat-count');
+const radioForm = document.getElementById('radio-form');
+
 
 let dogCount = 0;
 let catCount = 0;
 
-pickForm.addEventListener('submit', function(event) {
+
+radioForm.addEventListener('submit', function(event) {
     event.preventDefault();
 
     let randomNumber = Math.random();
@@ -28,5 +31,9 @@ pickForm.addEventListener('submit', function(event) {
 
     image.src = imageSource;
     image.classList.remove('hidden');
-
 }); 
+
+radioForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    console.log(radioForm.elements.side.value);
+});
